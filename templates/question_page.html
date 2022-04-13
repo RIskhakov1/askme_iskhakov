@@ -1,0 +1,67 @@
+{% extends "inc/base.html" %}
+{% load static %}
+
+{% block main %}
+<main class="flex-shrink-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-9 mt-5">
+                <div class="row" style="font-size: large;">
+                    <div class="col-2">
+                        <img class="question-avatar" src="{% static "img/question-avatar.png" %}" alt="">
+                    </div>
+                    <div class="col-10">
+                        <h3><a href="question_page.html">{{ questions.title }}</a></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                            sint occaecat cupidatat non proident. </p>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <button class="dislike">
+                            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                        </button>
+
+                        <span class="likes-number" style="color: green;">
+                            777
+                        </span>
+
+                        <button class="like">
+                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="col-8 mt-3">
+                        <p>Tags: <a href="question_page.html">Question x</a>, <a href="question_page.html">Question y</a></p>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                {% for answer in answers %}
+                    {% include "inc/answer.html" %}
+                {% endfor %}
+
+            </div>
+            <div class="col-3">
+                <h2 class="mt-5">Tags</h2>
+                <div class="row tag"><a href="question_page.html">Question x</a></div>
+                <div class="row tag"><a href="question_page.html">Question y</a></div>
+                <div class="row tag"><a href="question_page.html">Question z</a></div>
+                <div class="row tag"><a href="question_page.html">Question s</a></div>
+            </div>
+        </div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="">1</a></li>
+                <li class="page-item"><a class="page-link" href="">2</a></li>
+                <li class="page-item"><a class="page-link" href="">3</a></li>
+                <li class="page-item"><a class="page-link" href="">Next</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</main>
+{% endblock main %}

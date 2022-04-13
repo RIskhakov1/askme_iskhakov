@@ -1,0 +1,35 @@
+{% load static %}
+<div class="row question">
+    <div class="col-2">
+        <img class="question-avatar" src="{% static "img/question-avatar.png" %}" alt="">
+    </div>
+
+    {% block answ %}
+    <div class="col-10">
+        <h3><a href="{% url "question_page" question.number %}">{{ question.title }}</a></h3>
+        <p>{{ question.text }}</p>
+    </div>
+    {% endblock answ %}
+
+    <div class="col-2 mt-3">
+        <button class="dislike">
+            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+        </button>
+        <span class="likes-number" style="color: green;">
+            777
+        </span>
+        <button class="like">
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    {% block tools %}
+    <div class="col-2 mt-3">
+        <p><a href="{% url "question_page" question.number %}">Show answers &#8595;</a></p>
+    </div>
+
+    <div class="col-8 mt-3">
+        <p>Tags: <a href="question_page.html">Question x</a>, <a href="question_page.html">Question y</a></p>
+    </div>
+    {% endblock tools %}
+</div>

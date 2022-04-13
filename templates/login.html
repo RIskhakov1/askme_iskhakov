@@ -1,0 +1,51 @@
+{% extends "inc/base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static "css/login.css" %}">
+{% endblock title %}
+
+{% block body %}
+<body class="text-center" style="background-image: url('{% static "img/site-background.jpg" %}');">
+
+  <main class="form-signin">
+    <form>
+      <img class="mb-4 pic" src="{% static "img/login.jpg" %}" alt="" width="300" height="150">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+      <h1 class="h3 mb-3 fw-bolder" style="color: red;">Invalid email or password</h1>
+
+      <div class="form-floating">
+        <input type="email" maxlength="30" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" maxlength="30" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+
+     <footer class="footer mt-auto pt-5 text-muted text-center text-small">
+      <p class="mb-1">RIskhakov1 &copy; 2022</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+    </form>
+    
+  </main>
+
+
+  
+</body>
+{% endblock body %}

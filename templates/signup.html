@@ -1,0 +1,102 @@
+{% extends "inc/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="{% static "img/signup.jpg" %}" alt="" width="500" height="353">
+</div>
+
+<div class="row g-5">
+    <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Signup with</span>
+        </h4>
+        <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                    <h6 class="my-0">Google</h6>
+                    <small class="text-muted">Yeah Google</small>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                    <h6 class="my-0">Yandex</h6>
+                    <small class="text-muted">Yeah Yandex</small>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                    <h6 class="my-0">Facebook</h6>
+                    <small class="text-muted">Oh no Facebook</small>
+                </div>
+        </ul>
+
+    </div>
+    <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3" style="color: blue;">Main information</h4>
+        <form class="needs-validation" novalidate>
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label" >First name</label>
+                    <input type="text" maxlength="30" class="form-control" id="firstName" placeholder="" value="" required>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="lastName" class="form-label">Last name</label>
+                    <input type="text" maxlength="30" class="form-control" id="lastName" placeholder="" value="" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="username" class="form-label">Username</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text">@</span>
+                        <input type="text" maxlength="30" class="form-control" id="username" placeholder="Username"
+                            required>
+                    </div>
+                </div>
+
+                
+                <div class="col-12">
+                    <label for="email" class="form-label">Email <span
+                            class="text-muted">(Optional)</span></label>
+                    <input type="email" maxlength="30" class="form-control" id="email" placeholder="you@example.com">
+                </div>
+                <h2 class="h3 mb-3 fw-bolder" style="color: red;">Invalid email format</h2>
+
+                <div class="col-12">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" maxlength="30" class="form-control" id="password" placeholder="Password"
+                        required>
+                </div>
+                <h2 class="h3 mb-3 fw-bolder" style="color: red;">Password should be longer than 6 symbols</h2>
+
+                <div class="col-md-6">
+                    <label for="country" class="form-label">Country</label>
+                    <select class="form-select" id="country" required>
+                        <option value="">Choose...</option>
+                        <option>Russia</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="city" class="form-label">City</label>
+                    <select class="form-select" id="city" required>
+                        <option value="">Choose...</option>
+                        <option>Chelyabinsk</option>
+                    </select>
+                </div>
+
+                <label class="form-label mt-5">Choose avatar</label>
+                <div class="file-loading">
+                    <input id="avatar-1" name="avatar-1" type="file" required>
+                </div>
+
+                <hr class="my-4">
+
+                <button class="w-100 btn btn-primary btn-lg" type="submit">Signup</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
+

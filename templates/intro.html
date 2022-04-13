@@ -1,0 +1,41 @@
+{% extends "inc/base.html" %}
+{% load static %}
+
+{% block main %}
+<main class="flex-shrink-0">
+    <div class="container">
+        <div class="row" style="margin: 100px;">
+            <h1 style="text-align: center;">In our website you can</h1>
+        </div>
+        <div class="container mt-5" style="text-align: center;">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="{% static "img/ask-question.jpg" %}" alt="Generic placeholder image" width="140"
+                        height="140">
+                    <h2>Ask a question</h2>
+                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor.</p>
+                    <p><a class="btn btn-secondary" href="{% url "ask" %}" role="button" style="background-color: white;">View
+                            details &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="{% static "img/view-question.jpg" %}" alt="Generic placeholder image" width="140"
+                        height="140">
+                    <h2>View existing questions</h2>
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec
+                        elit. </p>
+                    <p><a class="btn btn-secondary" href="{% url "index" %}" role="button"
+                            style="background-color: white;">View details &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="{% static "img/find-by-tag.jpeg" %}" alt="Generic placeholder image" width="140"
+                        height="140">
+                    <h2>Find the info by tags</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. </p>
+                    <p><a class="btn btn-secondary" href="{% url "question_page" 1 %}" role="button"
+                            style="background-color: white;">View details &raquo;</a></p>
+                </div>
+            </div>
+
+        </div>
+</main>
+{% endblock main %}
